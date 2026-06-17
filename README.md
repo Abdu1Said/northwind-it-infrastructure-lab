@@ -98,3 +98,82 @@ Completed the second stage of the Northwind Solutions home lab by adding DHCP se
 
 I learned how DHCP supports a managed business network by automatically assigning IP addresses to client machines. I also practiced organizing Active Directory with OUs so users and computers can be managed by department, which will make Group Policy and onboarding easier later in the lab.
 
+
+## Day 3 — Users, Groups, and Onboarding Automation
+
+
+
+Completed the third stage of the Northwind Solutions home lab by creating department security groups, bulk-creating users from a CSV file, and testing an offboarding script.
+
+
+
+\### What I configured
+
+
+
+\* Created a `Groups` OU under the main `Northwind` OU
+
+\* Created department security groups:
+
+
+
+&#x20; \* `Sales-Staff`
+
+&#x20; \* `Engineering-Staff`
+
+&#x20; \* `Management-Staff`
+
+&#x20; \* `IT-Staff`
+
+\* Created a `users.csv` file with 25 sample employees across Sales, Engineering, Management, and IT
+
+\* Wrote `New-NorthwindUser.ps1` to create users from the CSV file
+
+\* Automatically placed users in the correct department OU
+
+\* Automatically added users to the correct department security group
+
+\* Set a temporary password and required users to change it at next logon
+
+\* Wrote `Disable-NorthwindUser.ps1` to disable an account and move it to the `Disabled Users` OU
+
+\* Tested offboarding by disabling `sjohnson` and moving the account to `Disabled Users`
+
+
+
+\### Evidence
+
+
+
+\* `screenshots/day3-security-groups-created.png`
+
+\* `screenshots/day3-users-created-from-csv.png`
+
+\* `screenshots/day3-sales-group-membership.png`
+
+\* `screenshots/day3-it-group-membership.png`
+
+\* `screenshots/day3-user-disabled-and-moved.png`
+
+
+
+\### Scripts
+
+
+
+\* `scripts/users.csv`
+
+\* `scripts/New-NorthwindUser.ps1`
+
+\* `scripts/Disable-NorthwindUser.ps1`
+
+
+
+\### What I learned
+
+
+
+I learned how to automate common Active Directory tasks with PowerShell instead of creating and disabling users manually. I also practiced using OUs and security groups to keep user accounts organized by department, which makes account management and future Group Policy work easier.
+
+
+
